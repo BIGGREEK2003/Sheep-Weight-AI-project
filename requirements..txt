@@ -1,0 +1,20 @@
+# Web Framework & API
+fastapi
+uvicorn
+
+# Machine Learning & Computer Vision
+torch
+torchvision
+Pillow
+numpy
+scikit-learn
+
+# User Interface
+flet
+
+# Networking
+requests
+
+# Database & Utilities (Built-in, but often listed for clarity)
+# sqlite3
+# hashlib
