@@ -20,7 +20,7 @@ This project provides an end-to-end solution for livestock management using Comp
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/BIGGREEK2003/Sheep-Weight-AI-project.git](https://github.com/BIGGREEK2003/Sheep-Weight-AI-project.git)
+git clone [https://github.com/BIGGREEK2003/Sheep-Weight-AI-project.git]
 cd Sheep-Weight-AI-project
 2. Install Dependencies
 It is recommended to use a virtual environment:
