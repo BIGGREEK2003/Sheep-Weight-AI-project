@@ -1,52 +1,53 @@
-# Sheep Weight & Carcass Composition Prediction API
+# 🐑 Sheep Weight & Carcass Composition AI
 
-This project provides an end-to-end solution for livestock management using Computer Vision. It features a deep learning model trained to predict a sheep's weight and carcass metrics (lean, fat, and bone mass) from images, served via a high-performance fast API and a modern mobile interface.
+A mobile AI solution for precision livestock monitoring. This project uses a fine-tuned ResNet18 model to predict sheep weight and carcass composition from images, integrated into a desktop application with user management and historical analytics.
 
-## 🚀 Features
-- **AI Engine:** Fine-tuned ResNet18 model for multi-output regression.
-- **FastAPI Backend:** Robust API handling image processing and model inference.
-- **Flet Frontend:** A sleek, neon-themed user interface with real-time analysis and scan history.
-- **Database Integration:** SQLite backend for user authentication and historical data tracking.
-- **Carcass Analysis:** Provides percentage breakdowns of Lean, Fat, and Bone content.
+## 🚀 New & Enhanced Features
+- **User Authentication System:** Secure signup and login flow with hashed password storage (SHA-256).
+- **Comprehensive Analytics:** Automatically calculates user stats including:
+  - Total Scans performed.
+  - Average Prediction Confidence.
+  - Weekly Scanning activity.
+- **Persistent Scan History:** Saves every prediction (Weight, Confidence, Status) to a local SQLite database for long-term tracking.
+- **Robust API Integration:** Backend key-fixing logic to ensure PyTorch model compatibility across different environments.
+- **Modern UI/UX:** Neon-themed Flet interface with a dedicated History tab and real-time scan feedback.
 
-## 🛠️ Project Structure
-- `AIModel_3.ipynb`: Training notebook including data augmentation and model fine-tuning.
-- `backend.py`: FastAPI server that loads the `.pth` model and provides the `/predict` endpoint.
-- `main.py`: The Flet application for the end-user (UI/UX).
-- `sheep_resnet18_finetuned.pth`: The trained PyTorch model weights.
-- `sheep_app.db`: Local database for users and results history.
+## 🛠️ Tech Stack
+- **Frontend:** [Flet](https://flet.dev/) (Flutter for Python)
+- **Backend:** [FastAPI](https://fastapi.tiangolo.com/) & Uvicorn
+- **ML Engine:** PyTorch (ResNet18)
+- **Database:** SQLite3
+- **Image Processing:** PIL (Pillow) & Torchvision
 
-## ⚙️ Installation & Setup
+## 📁 Project Structure
+- `main.py`: The frontend application, database management, and UI logic.
+- `backend.py`: FastAPI server for model inference and image preprocessing.
+- `AIModel_3.ipynb`: The research and training pipeline.
+- `sheep_app.db`: SQLite database for user data and history.
+- `requirements.txt`: List of all Python dependencies.
 
-### 1. Clone the Repository
+## ⚙️ Setup Instructions
+
+### 1. Backend Setup
 ```bash
-git clone [https://github.com/BIGGREEK2003/Sheep-Weight-AI-project.git]
-cd Sheep-Weight-AI-project
-2. Install Dependencies
-It is recommended to use a virtual environment:
+# Install dependencies
+pip install -r requirements.txt
 
-Bash
-pip install torch torchvision fastapi uvicorn pillow numpy flet requests scikit-learn
-3. Run the Backend
-Start the API server first:
-
-Bash
+# Start the API server
 python backend.py
-The API will run at http://127.0.0.1:8008.
-
-4. Run the Frontend
-In a new terminal, launch the application:
+2. Frontend Setup
+In a separate terminal:
 
 Bash
 python main.py
-📊 How it Works
-Input: The user uploads or takes a photo of a sheep via the Flet app.
+📊 Prediction Logic
+The model performs a multi-output regression to determine:
 
-Processing: The image is resized to 224x224 and normalized.
+Total Weight (kg)
 
-Inference: The ResNet18 model predicts the weight and body composition.
+Lean Mass %
 
-Storage: Results are saved to the SQLite database for the user to view in their "History" tab.
+Fat Mass %
 
-🛡️ Security Note
-This repository has been scrubbed of sensitive Hugging Face API tokens. If you are contributing to this project, please use a local .env file for your credentials.
+Bone Mass %
+
