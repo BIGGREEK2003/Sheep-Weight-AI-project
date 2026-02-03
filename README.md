@@ -1,6 +1,6 @@
 # Sheep Weight & Carcass Composition Prediction API
 
-This project provides an end-to-end solution for livestock management using Computer Vision. It features a deep learning model trained to predict a sheep's weight and carcass metrics (lean, fat, and bone mass) from images, served via a high-performance API and a modern desktop/mobile interface.
+This project provides an end-to-end solution for livestock management using Computer Vision. It features a deep learning model trained to predict a sheep's weight and carcass metrics (lean, fat, and bone mass) from images, served via a high-performance fast API and a modern mobile interface.
 
 ## 🚀 Features
 - **AI Engine:** Fine-tuned ResNet18 model for multi-output regression.
